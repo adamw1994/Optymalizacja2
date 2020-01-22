@@ -131,8 +131,6 @@ namespace Optymalizacja2
 
                 List<int> nst = new List<int>();
 
-
-
                 foreach (string s in sp)
                 {
                     if (s != "")
@@ -150,41 +148,14 @@ namespace Optymalizacja2
                 permutacja.Add(i);
             }
             int[] S = new int[n + 1];
-            Harmonogram(ln, permutacja.ToArray(), lczas.ToArray(), lmaszyna.ToArray(), S, n, 9);
+
+            AlgorytmHelper.Harmonogram(ln, permutacja.ToArray(), lczas.ToArray(), lmaszyna.ToArray(), S, n, 9);
+
             gP = lczas.ToArray();
             gS = S;
             gMi = lmaszyna.ToArray();
             gJ = lnrzadanie.ToArray();
             pictureBox1.Refresh();
-        }
-
-        public void Harmonogram(List<List<int>> ln, int [] pi, int [] p, int [] mi, int [] S, int n, int m)
-        {
-            for (int i=0; i<n; i++)
-            {
-                S[i] = 0;
-            }
-
-            int[] Z = new int[n + 1];
-            for (int i = 0; i < n; i++)
-            {
-                Z[i] = 0;
-            }
-
-            for (int i=0; i<n; i++)
-            {
-                int op = pi[i];
-                int ms = mi[op];
-                S[op] = Math.Max(S[op], Z[ms]);
-                Z[ms] = S[op] + p[op];
-                foreach(var node in ln[op])
-                {
-                    if (S[node] < Z[ms])
-                    {
-                        S[node] = Z[ms];
-                    }
-                }
-            }
         }
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
