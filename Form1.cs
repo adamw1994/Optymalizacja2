@@ -38,9 +38,17 @@ namespace Optymalizacja2
         // Funkcja ktora odpala sie po kliknieciu - wczytaj plik
         private void WczytajPlik_Click(object sender, EventArgs e)
         {
-            var loadFileForm = new LoadFileForm(Procesy);
-            loadFileForm.ShowDialog(this);
-            Wyswietl();
+            try
+            {
+                var loadFileForm = new LoadFileForm(Procesy);
+                loadFileForm.ShowDialog(this);
+                Wyswietl();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         // Funkcja do wyswietlania danych w DataGridzie
@@ -78,10 +86,9 @@ namespace Optymalizacja2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AlgorytmJakis();
-
+            LiczWszystko();
         }
-        public void AlgorytmJakis()
+        public void LiczWszystko()
         {
             int oldZad = 0;
             int n = 0;
