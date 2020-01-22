@@ -40,6 +40,7 @@
             this.priorityTextBox.Name = "priorityTextBox";
             this.priorityTextBox.Size = new System.Drawing.Size(100, 20);
             this.priorityTextBox.TabIndex = 0;
+            this.priorityTextBox.TextChanged += new System.EventHandler(this.priorityTextBox_TextChanged);
             // 
             // label1
             // 

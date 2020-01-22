@@ -17,6 +17,7 @@ namespace Optymalizacja2
         {
             this.Procesy = procesy;
             InitializeComponent();
+            button1.Enabled = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -31,6 +32,11 @@ namespace Optymalizacja2
                 Procesy.Add(proces);
             }
             this.Close();
+        }
+
+        private void priorityTextBox_TextChanged(object sender, EventArgs e)
+        {
+            button1.Enabled = true;
         }
     }
 }

@@ -18,11 +18,13 @@ namespace Optymalizacja2
 
         public DataSet DS;
         public DataTable DT;
-        List<List<int>> ln = new List<List<int>>();
+        List<List<int>> ln;
+
         int[] gS = null;
         int[] gP = null;
         int[] gMi = null;
         int[] gJ = null;
+
 
         // Konstruktor - wywoluje sie przy starcie programu
         public Form1()
@@ -187,58 +189,68 @@ namespace Optymalizacja2
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
-            Graphics G = e.Graphics;
-           
-            G.Clear(Color.LightGray);
-            Pen px = new Pen(Color.Black);
-            SolidBrush br = new SolidBrush(Color.Yellow);
-            SolidBrush br1 = new SolidBrush(Color.Green);
-            SolidBrush br2 = new SolidBrush(Color.Red);
-            //     G.FillRectangle(br, 100, 100, 200, 200);
+            Graphics Graph = e.Graphics;           
+            Graph.Clear(Color.LightGray);
+            Pen blackPen = new Pen(Color.Black);
+            SolidBrush yellowBrush = new SolidBrush(Color.Yellow);
+            SolidBrush greenBrush = new SolidBrush(Color.Green);
+            SolidBrush redBrush = new SolidBrush(Color.Red);
+            pictureBox1.Width = 1050;
+            float maxTime = 0;
 
-            if (gS == null)
+            //Szukamy najwiekszego (czas rozpoczecia zadania + czas jego trwania)
+            for (int i = 1; i < gS.Length; i++)
             {
-                return;
+                if (gS[i] + gP[i] > maxTime)
+                {
+                    maxTime = gS[i] + gP[i];
+                }                    
             }
 
-            int graphWidth = 0;
+            float mnoznikSzerokosciProstokata = 1000 / maxTime;
 
-            for(int i=1;i<gS.Length;i++)
+            for (int i=0; i<gS.Length; i++)
             {
-               
+              
+                float x = gS[i] * mnoznikSzerokosciProstokata;
+                float y = gMi[i] * 50;
+                float rectangleHeight = 30;
+                float rectangleWidth = gP[i] * mnoznikSzerokosciProstokata;
 
-                int x = gS[i] * 10;
-                int w = gP[i] * 30;
-                int y = gMi[i] * 50;
-                int h = 30;
-                graphWidth += gP[i];
                 if (gJ[i] == 1)
                 {
-                    G.FillRectangle(br, x, y, w, h);
+                    Graph.FillRectangle(yellowBrush, x, y, rectangleWidth, rectangleHeight);
                 }
 
                 if (gJ[i] == 2)
                 {
-                    G.FillRectangle(br1, x, y, w, h);
+                    Graph.FillRectangle(greenBrush, x, y, rectangleWidth, rectangleHeight);
                 }
 
                 if (gJ[i] == 3)
                 {
-                    G.FillRectangle(br2, x, y, w, h);
+                    Graph.FillRectangle(redBrush, x, y, rectangleWidth, rectangleHeight);
                 }
-
             }
-            for (int i = 1; i < 12; i++)
+
+            // Rysowanie pionowych kresek
+            for (int i = 0; i < 12; i++)
             {
-                G.DrawLine(px, i * pictureBox1.Width/11, 0, i * pictureBox1.Width/11, 1000);
+                Graph.DrawLine(blackPen, i * 91, 0, i * 91, 1000);
             }
-            pictureBox1.Width = gS[gS.Length-1] * 10 + gP[gP.Length-1]*30 + 50;
-            label8.Text = (graphWidth / 10).ToString();
-            label9.Text = (2 * graphWidth / 10).ToString();
-            label10.Text = (3 * graphWidth / 10).ToString();
 
+            // Wyznacznie skali osi X
+            label8.Text  = ((int)(maxTime / 11)).ToString();
+            label9.Text  = ((int)(2 * maxTime / 11)).ToString();
+            label10.Text = ((int)(3 * maxTime / 11)).ToString();
+            label11.Text = ((int)(4 * maxTime / 11)).ToString();
+            label12.Text = ((int)(5 * maxTime / 11)).ToString();
+            label13.Text = ((int)(6 * maxTime / 11)).ToString();
+            label14.Text = ((int)(7 * maxTime / 11)).ToString();
+            label15.Text = ((int)(8 * maxTime / 11)).ToString();
+            label16.Text = ((int)(9 * maxTime / 11)).ToString();
+            label17.Text = ((int)(10 *maxTime / 11)).ToString();
+            label18.Text = maxTime.ToString();
         }
-
-
     }
 }
