@@ -1,0 +1,10 @@
+﻿nr;zadania;Czas;Maszyna;Wymaga;Następnik
+1;Wycięcie prostej deski z kawałka tarcicy;1;1;;2
+2;Zmniejszenie grubości na grubościówce;1;2;1;3
+3;Sklejenie utworzonych kawałków;2;3;2;4
+4;Załadowanie drewna do prasy;5;4;3;5
+5;Wycięcie pomniejszych kawałków o odpowiednim wymiarze szer. X wys.;1;1;4;6
+6;Frezowanie kantów pionowych;1;5;5;7
+7;Frezowanie kantów poziomych;1;5;6;8
+8;Szlifowanie powierzchni;2;6;7;9
+9;Olejowanie;1;7;8;

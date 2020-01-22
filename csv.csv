@@ -1,0 +1,59 @@
+﻿nr zadania;nr;zadania;Czas;Maszyna;Wymaga;Następnik
+1;1;Wycięcie prostej deski z kawałka tarcicy;1;1;;2
+1;2;Zmniejszenie grubości na grubościówce;1;2;1;3
+1;3;Sklejenie utworzonych kawałków;2;3;2;4
+1;4;Załadowanie drewna do prasy;5;4;3;5
+1;5;Wycięcie pomniejszych kawałków o odpowiednim wymiarze szer. X wys.;1;1;4;6
+1;6;Frezowanie kantów pionowych;1;5;5;7
+1;7;Frezowanie kantów poziomych;1;5;6;8
+1;8;Szlifowanie powierzchni;2;6;7;9
+1;9;Olejowanie;1;7;8;
+2;1;Wycięcie prostej deski z kawałka tarcicy;1;1;;2
+2;2;Zmniejszenie grubości na grubościówce;1;2;1;3,4,5
+2;3;Sklejenie utworzonych kawałków w element będący siedziskiem;2;3;2;6
+2;4;Sklejenie utworzonych kawałków w elementy będące nogami i tralkami;2;3;2;7
+2;5;Sklejenie utworzonych kawałków w element będący górą oparcia;2;3;2;8
+2;6;Załadowanie elementów siedziskowych do prasy;5;4;3;9
+2;7;Załadowanie nóg i tralek do prasy;5;4;4;10
+2;8;Załadowanie góry oparcia do prasy;5;4;5;11
+2;9;Wycięcie elementów będących siedziskiem;1;1;6;12
+2;10;Pocięcie elementów będących nogami i tralkami;1;1;7;15
+2;11;Wycięcie elementów będących górą oparcia;1;1;8;17
+2;12;Frezowanie pionowe siedziska;1;5;9;13
+2;13;Frezowanie poziome siedziska;1;5;12;16
+2;14;Wytłoczenie tralek;1;8;10;18
+2;15;Frezowanie pionowe nóg;1;5;10;19
+2;16;Szlifowanie powierzchni siedziska;2;9;9;19
+2;17;Szlifowanie elementów będących górą oparcia;2;9;11;19
+2;18;Szlifowanie tralek;1;9;14;19
+2;19;Położenie podkładu na wszystkie elementy;2;7;16,17,18;20,21,22
+2;20;Szlifowanie końcowe powierzchni siedziska;2;9;19;23
+2;21;Szlifowanie końcowe góry siedziska;2;9;19;23
+2;22;Szlifowanie końcowe tralek;2;9;19;23
+2;23;Montaż krzesła;2;11;20,21,22;24
+2;24;Lakierowanie krzesła;5;7;23;
+3;1;Wycięcie prostej deski z kawałka tarcicy;1;1;;2
+3;2;Zmniejszenie grubości na grubościówce;1;2;1;3,4,5
+3;3;Sklejenie utworzonych kawałków w element będący blatem;2;3;2;6
+3;4;Sklejenie utworzonych kawałków w elementy będące szkieletem pod blatem;2;3;2;7
+3;5;Sklejenie utworzonych kawałków w elementy będące nogami;2;3;2;8
+3;6;Załadowanie elementu będącego blatem do prasy;5;4;3;9
+3;7;Załadowanie elementu będącego szkieletem do prasy;5;4;4;13
+3;8;Załadowanie elementu będącego nogami do prasy;5;4;5;19
+3;9;Frezowanie blatu;1;5;6;10
+3;10;Szlifowanie wstępne blatu;1;9;9;11
+3;11;Nałożenie podkładu na blat;2;7;10;12
+3;12;Szlifowanie końcowe blatu;1;9;11;24
+3;13;Wycięcie elementów będących szkieletem;1;1;7;14
+3;14;Frezowanie elementów będących szkieletem;1;5;13;15
+3;15;Sklejenie szkieletu;2;3;14;16
+3;16;Szlifowanie wstępne szkieletu;1;9;15;17
+3;17;Nałożenie podkładu na szkielet;2;7;16;18
+3;18;Szlifowanie końcowe szkieletu;1;9;17;24
+3;19;Wycięcie nóg;1;1;8;20
+3;20;Frezowanie nóg;1;5;19;21
+3;21;Szlifowanie wstępne nóg;1;9;20;22
+3;22;Nałożenie podkładu na nogi;2;7;21;23
+3;23;Szlifowanie końcowe nóg;1;9;22;24
+3;24;Montaż stołu;2;11;12,18,23;25
+3;25;Lakierowanie stołu;5;7;24;

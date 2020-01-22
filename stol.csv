@@ -1,0 +1,26 @@
+﻿nr;zadania;Czas;Maszyna;Wymaga;Następnik
+1;Wycięcie prostej deski z kawałka tarcicy;1;1;;2
+2;Zmniejszenie grubości na grubościówce;1;2;1;3,4,5
+3;Sklejenie utworzonych kawałków w element będący blatem;2;3;2;6
+4;Sklejenie utworzonych kawałków w elementy będące szkieletem pod blatem;2;3;2;7
+5;Sklejenie utworzonych kawałków w elementy będące nogami;2;3;2;8
+6;Załadowanie elementu będącego blatem do prasy;5;4;3;9
+7;Załadowanie elementu będącego szkieletem do prasy;5;4;4;13
+8;Załadowanie elementu będącego nogami do prasy;5;4;5;19
+9;Frezowanie blatu;1;5;6;10
+10;Szlifowanie wstępne blatu;1;9;9;11
+11;Nałożenie podkładu na blat;2;7;10;12
+12;Szlifowanie końcowe blatu;1;9;11;24
+13;Wycięcie elementów będących szkieletem;1;1;7;14
+14;Frezowanie elementów będących szkieletem;1;5;13;15
+15;Sklejenie szkieletu;2;3;14;16
+16;Szlifowanie wstępne szkieletu;1;9;15;17
+17;Nałożenie podkładu na szkielet;2;7;16;18
+18;Szlifowanie końcowe szkieletu;1;9;17;24
+19;Wycięcie nóg;1;1;8;20
+20;Frezowanie nóg;1;5;19;21
+21;Szlifowanie wstępne nóg;1;9;20;22
+22;Nałożenie podkładu na nogi;2;7;21;23
+23;Szlifowanie końcowe nóg;1;9;22;24
+24;Montaż stołu;2;11;12,18,23;25
+25;Lakierowanie stołu;5;7;24;
